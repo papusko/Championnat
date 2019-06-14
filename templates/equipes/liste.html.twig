@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Listes des équipes de la ligue 1{% endblock %}
+
+{% block body %}
+    <h1>Liste des équipes</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom de l'equipe</th>
+                <th>Prenom et Nom du Coach</th>
+                <th>Nombre de joueurs</th>
+                <th>Nom du Stade</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for e in equipes %}
+            <tr>
+                <td>{{ e.nomEquipe }}</td>
+                <td>{{ e.prenomEtNomCoach }}</td>
+                <td>{{ e.nombreDeJoueur }}</td>
+                <td>{{ e.nomDuStade }}</td>
+                <td>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('equipes_creer') }}">Ajouter une nouvelle équipe</a>
+{% endblock %}

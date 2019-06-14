@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipes{% endblock %}
+
+{% block body %}
+    <h1>Equipes</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Identifiant</th>
+                <td>{{ equipes.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom de l'équipe</th>
+                <td>{{ equipes.nomEquipe }}</td>
+            </tr>
+            <tr>
+                <th>Prénom et Nom du Coach</th>
+                <td>{{ equipes.prenomEtNomCoach }}</td>
+            </tr>
+            <tr>
+                <th>Nombre de joueur</th>
+                <td>{{ equipes.nombreDeJoueur }}</td>
+            </tr>
+            <tr>
+                <th>Nom du Stade</th>
+                <td>{{ equipes.nomDuStade }}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <a href="{{ path('nos_equipes') }}">Retour à la liste des équipes</a>
+
+    <a href="{{ path('equipe_modifier', {'id': equipes.id}) }}">Modifier</a>
+
+{% endblock %}

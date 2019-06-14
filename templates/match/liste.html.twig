@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Resultats du championnat{% endblock %}
+
+{% block body %}
+    <h1>Resultat du championnat de ligue 1</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Equipe à domicile</th>
+                <th>Equipe à l'exterieur</th>
+                <th>Score equipe à domicile</th>
+                <th>Score equipe à l'exterieur</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for m in match %}
+            <tr>
+                <td>{{ m.equipeADomicile }}</td>
+                <td>{{ m.equipeExterieur }}</td>
+                <td>{{ m.scoreEquipeDomicile }}</td>
+                <td>{{ m.scoreEquipeExterieur }}</td>
+                <td>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">pas de score enregistrer pour l'instant</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('match_creer') }}">Ajouter un score</a>
+{% endblock %}

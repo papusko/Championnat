@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Enregistrement des match{% endblock %}
+
+{% block body %}
+
+<div class="container mt-4">
+    <h1>enregistrment des matchs </h1>
+    {{ form_start(form) }}
+		    <div class="row">
+		    	<div class="col-md-4">{{ form_row(form.equipeADomicile) }}</div>
+		    	<div class="col-md-4">{{ form_row(form.equipeExterieur) }}</div>
+		    		
+		    </div>
+		    <div class="row">
+		    	<div class="col-md-4">{{ form_row(form.scoreEquipeDomicile) }}</div>
+		    	<div class="col-md-4">{{ form_row(form.scoreEquipeExterieur) }}</div>	
+		    </div>
+    {{ form_widget(form) }}
+    <button class="btn btn-primary"> Ajout le match</button>
+    {{ form_end(form) }}
+    <a href="{{ path('les_match') }}">Retour à la liste des resultats</a>
+</div>
+{% endblock %}

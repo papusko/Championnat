@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout de dentiste{% endblock %}
+
+{% block body %}
+
+<div class="container mt-4">
+    <h1>Ajout d'un nouveau dentiste  ✅</h1>
+    {{ form_start(form) }}
+		    <div class="row">
+		    	<div class="col-md-4">{{ form_row(form.nomEquipe) }}</div>
+		    	<div class="col-md-4">{{ form_row(form.prenomEtNomCoach) }}</div>
+		    		
+		    </div>
+		    <div class="row">
+		    	<div class="col-md-4">{{ form_row(form.nombreDeJoueur) }}</div>
+		    	<div class="col-md-4">{{ form_row(form.nomDuStade) }}</div>	
+		    </div>
+    {{ form_widget(form) }}
+    <button class="btn btn-primary"> Ajouter Equipe</button>
+    {{ form_end(form) }}
+    <a href="{{ path('nos_equipes') }}">Retour à la liste des équipes</a>
+</div>
+{% endblock %}
